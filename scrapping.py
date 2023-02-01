@@ -63,14 +63,14 @@ years = [1930, 1934, 1938, 1950, 1954, 1958, 1962, 1966, 1970, 1974,
 # results: historical data
 fifa = [get_matches(year) for year in years]
 df_fifa = pd.concat(fifa, ignore_index=True)
-df_fifa.to_csv("fifa_worldcup_historical_data.csv", index=False)
+df_fifa.to_csv("matches.csv", index=False)
 
 #2022 fixtures
 df_fixture = get_matches(2022)
-df_fixture.to_csv('fifa_worldcup_fixtures.csv', index=False)
+df_fixture.to_csv('fixtures.csv', index=False)
 
 #missing data
 fifa = [get_misssing_data(year) for year in years]
 driver.quit()
 df_fifa = pd.concat(fifa, ignore_index=True)
-df_fifa.to_csv("fifa_worldcup_missing_data.csv", index=False)
+df_fifa.to_csv("missing.csv", index=False)
