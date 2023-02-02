@@ -1,8 +1,8 @@
 import pandas as pd
 
-df_historical_data = pd.read_csv('matches.csv')
-df_fixture = pd.read_csv('fixtures.csv')
-df_missing_data = pd.read_csv('missing.csv')
+df_historical_data = pd.read_csv('data/matches.csv')
+df_fixture = pd.read_csv('data/fixtures.csv')
+df_missing_data = pd.read_csv('data/missing.csv')
 
 #Cleaning df_fixture
 df_fixture['home'] = df_fixture['home'].str.strip()
@@ -44,8 +44,7 @@ df_historical_data['TotalGoals'] = df_historical_data['HomeGoals'] + df_historic
 
 #Exporting clean dataframes
 
-df_historical_data.to_csv('clean_matches.csv',index=False)
-df_fixture.to_csv('clean_fixture.csv',index=False)
+df_historical_data.to_csv('data/clean_matches.csv',index=False)
 
 #Extra verifications
 
