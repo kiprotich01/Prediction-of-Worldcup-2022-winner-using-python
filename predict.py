@@ -15,3 +15,4 @@ df_away = df_away.rename(columns={'AwayTeam':'Team', 'HomeGoals': 'GoalsConceded
 
 df_team_strength = pd.concat([df_home, df_away], ignore_index=True).groupby(['Team']).mean()
 df_team_strength
+
