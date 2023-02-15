@@ -1,38 +1,30 @@
-# FIFA 2022 World Cup Winner Prediction
-This repository contains the code to scrape FIFA World Cup matches since 1930 and up to 2022, clean the data and use it to train a machine learning model for predicting match outcomes.
+# FIFA World Cup 2022 Predictions
+This project aims to predict the outcomes of the group stage, knockout stage, and final of the upcoming FIFA World Cup 2022 in Qatar. The predictions are based on historical data of previous FIFA World Cups and are made using statistical modeling techniques.
 
-## Scraping
-The code for scraping is in the file scraping.py and is split into two parts:
+## Part 1: Data Scraping
+The first step of the project is to gather historical data of FIFA World Cups. To do so, we scrape data from the FIFA website.
 
-get_matches(year): This function takes a year (e.g., 1930) and scrapes the FIFA World Cup matches for that year from the corresponding Wikipedia page. It returns a Pandas DataFrame with the home team, away team, and score for each match.
+The code for data scraping can be found in the scrape.py file. This script uses the requests and beautifulsoup4 packages to make HTTP requests and parse the HTML content of web pages.
 
-get_missing_data(year): This function takes a year and scrapes the matches that are missing from the corresponding Wikipedia page using Selenium. This is necessary because the format of the tables on the pages is not consistent. The function returns a Pandas DataFrame with the home team, away team, and score for each match.
+Part 2: Data Cleaning
+After gathering data from the FIFA website, we need to clean and preprocess the data to make it suitable for statistical modeling. The code for data cleaning can be found in the clean.py file.
 
-The scraped data is stored in CSV files for historical matches, 2022 fixtures, and missing matches.
+In this script, we clean and preprocess the following data:
 
-## Cleaning
-The code for cleaning the scraped data is in the file cleaning.py. The steps performed are:
+Matches Data: We clean the data of all matches played in FIFA World Cup tournaments from 1930 to 2018. We remove any invalid or incomplete data, fix any missing or inconsistent data, and convert data types where needed. We also add new columns to the data such as match outcome and goal difference.
+Teams Data: We create a dictionary of all teams that have participated in FIFA World Cup tournaments from 1930 to 2018. The dictionary contains the name, FIFA code, and confederation of each team.
+Fixtures Data: We create a schedule of matches for the FIFA World Cup 2022 based on the structure of the tournament. The schedule includes the group stage, knockout stage, and final.
+Part 3: Prediction
+The final step of the project is to use the cleaned data to make predictions for the FIFA World Cup 2022. The code for making predictions can be found in the predict.py file.
 
-Load the historical matches, 2022 fixtures, and missing matches CSV files as Pandas DataFrames.
+In this script, we use the cleaned data to calculate the strength of each team and use statistical modeling techniques to predict the outcomes of matches in the group stage, knockout stage, and final.
 
-Clean the df_fixture DataFrame by removing leading and trailing white spaces in the home and away team names.
+The script also contains functions to update the tournament schedule based on the results of previous matches and to calculate the points and standings of teams in the group stage.
 
-Clean the df_missing_data DataFrame by dropping any rows with missing data, and add it to df_historical_data.
+Conclusion
+This project demonstrates how data scraping and statistical modeling techniques can be used to make predictions for a real-world event. The predictions made by this project can be used to inform and guide discussions and decisions about the FIFA World Cup 2022.
 
-Delete the match between Sweden and Austria in the 1958 World Cup because it was a walkover.
-
-Clean the home and away team names and the score in df_historical_data.
-
-Split the score into the number of goals scored by the home team and the away team.
-
-Rename columns and change data types as necessary.
-
-Create a new column for the total number of goals in each match.
-
-Export the cleaned data as a CSV file.
-
-## Prediction
-The code for predicting the outcomes of 2022 World Cup matches is in the file prediction.py. It uses the cleaned historical data to train a Random Forest Classifier model and predicts the outcomes of the 2022 fixtures. The predicted outcomes are stored in a Pandas DataFrame and exported to a CSV file.
-
-## Conclusion
-This repository contains the code for scraping, cleaning, and predicting FIFA World Cup matches. The scraped data is cleaned and used to train a machine learning model that predicts the outcomes of 2022 World Cup matches. The code can be used as a starting point for further analysis and prediction of football matches.
+References
+FIFA Website
+Requests Package
+Beautiful Soup Package
