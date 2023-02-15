@@ -1,4 +1,4 @@
-#FIFA 2022 World Cup Winner Prediction
+# FIFA 2022 World Cup Winner Prediction
 This repository contains the code to scrape FIFA World Cup matches since 1930 and up to 2022, clean the data and use it to train a machine learning model for predicting match outcomes.
 
 Scraping
