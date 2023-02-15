@@ -1,7 +1,7 @@
 # FIFA 2022 World Cup Winner Prediction
 This repository contains the code to scrape FIFA World Cup matches since 1930 and up to 2022, clean the data and use it to train a machine learning model for predicting match outcomes.
 
-Scraping
+## Scraping
 The code for scraping is in the file scraping.py and is split into two parts:
 
 get_matches(year): This function takes a year (e.g., 1930) and scrapes the FIFA World Cup matches for that year from the corresponding Wikipedia page. It returns a Pandas DataFrame with the home team, away team, and score for each match.
@@ -10,7 +10,7 @@ get_missing_data(year): This function takes a year and scrapes the matches that 
 
 The scraped data is stored in CSV files for historical matches, 2022 fixtures, and missing matches.
 
-Cleaning
+## Cleaning
 The code for cleaning the scraped data is in the file cleaning.py. The steps performed are:
 
 Load the historical matches, 2022 fixtures, and missing matches CSV files as Pandas DataFrames.
@@ -31,8 +31,8 @@ Create a new column for the total number of goals in each match.
 
 Export the cleaned data as a CSV file.
 
-Prediction
+## Prediction
 The code for predicting the outcomes of 2022 World Cup matches is in the file prediction.py. It uses the cleaned historical data to train a Random Forest Classifier model and predicts the outcomes of the 2022 fixtures. The predicted outcomes are stored in a Pandas DataFrame and exported to a CSV file.
 
-Conclusion
+## Conclusion
 This repository contains the code for scraping, cleaning, and predicting FIFA World Cup matches. The scraped data is cleaned and used to train a machine learning model that predicts the outcomes of 2022 World Cup matches. The code can be used as a starting point for further analysis and prediction of football matches.
