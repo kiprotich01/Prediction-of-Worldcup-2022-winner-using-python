@@ -26,6 +26,4 @@ The script also contains functions to update the tournament schedule based on th
 This project demonstrates how data scraping and statistical modeling techniques can be used to make predictions for a real-world event. The predictions made by this project can be used to inform and guide discussions and decisions about the FIFA World Cup 2022.
 
 ## References
-FIFA Website
-Requests Package
-Beautiful Soup Package
+Fbref Website
